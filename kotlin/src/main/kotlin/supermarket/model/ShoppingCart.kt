@@ -6,14 +6,13 @@ import java.util.HashMap
 class ShoppingCart {
 
     private val items = ArrayList<ProductQuantity>()
-    internal var productQuantities: MutableMap<Product, Double> = HashMap()
-
+    internal var productQuantities: MutableMap<Product, Double> = LinkedHashMap()
 
     internal fun getItems(): List<ProductQuantity> {
         return ArrayList(items)
     }
 
-    internal fun addItem(product: Product) {
+     fun addItem(product: Product) {
         this.addItemQuantity(product, 1.0)
     }
 
